@@ -1,0 +1,25 @@
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(10vw) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+.sakura-petal {
+  position: fixed;
+  top: -10px; /* Start just above the viewport */
+  left: calc(100% * var(--left-position, 0.5)); /* Randomize starting horizontal position */
+  width: 10px; /* Adjust petal size */
+  height: 10px;
+  background-color: whitesmoke;
+  border-radius: 50%; /* Circular petal shape */
+  opacity: 0.8;
+  animation: fall linear infinite;
+  animation-duration: calc(5s + var(--fall-speed, 0s)); /* Random fall duration */
+  animation-delay: var(--delay, 0s);
+  z-index: 9999;
+}
